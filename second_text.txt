@@ -1,2 +1,0 @@
-some text added with nano
-and some with echo
