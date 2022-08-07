@@ -1,6 +1,6 @@
 import { employeeArr } from "./employeeArr.js";
 
-//Task 1, 2
+/*//Task 1, 2
 class Employee {
   constructor(obj) {
     this.id = obj.id;
@@ -16,8 +16,8 @@ class Employee {
   }
 
   fullInfo() {
-    /*return console.log(Object.keys(this), Object.values(this));*/
-    /*return `id - ${this.id}, name - ${this.name}, surname - ${this.surname}`;*/
+    /!*return console.log(Object.keys(this), Object.values(this));*!/
+    /!*return `id - ${this.id}, name - ${this.name}, surname - ${this.surname}`;*!/
   }
 }
 
@@ -56,7 +56,23 @@ const getRandomEmployee = (arr) => {
   return new Employee(employeeArr[randomIndex]);
 }
 
-console.log("RandomEmployee: ", getRandomEmployee(employeeConstructArr));
+console.log("RandomEmployee: ", getRandomEmployee(employeeConstructArr));*/
 
 //Task 7
 /*employeeObj.fullInfo();*/
+
+//Lesson exercise
+
+employeeArr.sort((el1, el2) => {
+  return el1.salary-el2.salary;
+
+  //second solution
+/*  if(el1.salary === el2.salary)
+    return 0;
+  else if(el1.salary > el2.salary)
+    return 1;
+  else if(el1.salary < el2.salary)
+    return -1;*/
+})
+
+console.log(employeeArr);
