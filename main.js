@@ -93,3 +93,21 @@ setTimeout(getTime, 2000);
 setTimeout(getTime, 3342);
 setTimeout(getTime, 7432);
 setTimeout(getTime, 1076);
+
+//Task 4
+
+const timer = (time) => {
+  let MM = "00";
+  let SS = "00";
+
+  function a() {
+    MM = Math.floor(+time / 60);
+    SS = +time % 60;
+    console.log(`${MM}:${SS}`);
+    time--;
+  }
+
+  if (time > 60) {
+    setInterval(a, 1000);
+  }
+};
