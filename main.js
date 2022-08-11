@@ -96,7 +96,7 @@ setTimeout(getTime, 1076);
 
 //Task 4
 
-const timer = (time) => {
+/*const timer = (time) => {
   let MM = "00";
   let SS = "00";
 
@@ -110,4 +110,4 @@ const timer = (time) => {
   if (time > 60) {
     setInterval(a, 1000);
   }
-};
+};*/
