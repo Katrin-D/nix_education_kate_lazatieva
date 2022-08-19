@@ -1,16 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Practise Kate Lazarieva</title>
-</head>
-<body>
-<h1>HW# - Kate Lazarieva</h1>
+  </head>
+  <body>
+    <div class="container">
+<!--      <header class="header">
+        <a href="" class="logo"><img src="./img/icons/logo.svg" alt="" /></a>
+        <a href="" class="basket"><img src="./img/icons/cart.svg" alt="" /></a>
+      </header>-->
+      <main>
+        <div class="banner">
+          <img src="./img/banners/ipad_air_banner.jpg" alt="" id="banner" />
+        </div>
 
-<script nomodule type="module" src="./main.js"></script>
-</body>
+        <div class="items" id="items">
+          <div class="card" id="card">
+            <div class="photo">
+              <img src="" alt="" id="photo" width="200" height="200" />
+            </div>
+            <h3 class="title" id="title"></h3>
+            <p class="stock_status"><span id="stock_status">31</span> left in stock</p>
+            <p class="price">Price: <span id="price">500</span> $</p>
+            <a href="" class="add_button">Add to cart</a>
+            <div class="status"></div>
+          </div>
+        </div>
+      </main>
+      <footer></footer>
+    </div>
+    <script nomodule type="module" src="./js/main.js"></script>
+  </body>
 </html>
