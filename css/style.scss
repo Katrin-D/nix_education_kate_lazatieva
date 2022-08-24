@@ -50,8 +50,15 @@ p {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   vertical-align: middle;
+}
+
+input {
+  outline: none;
+  :focus {
+    outline: none;
+  }
 }
 
 .container {
@@ -63,20 +70,19 @@ img {
 .header {
   display: flex;
   justify-content: space-between;
+  padding: 10px;
+
+  .logo {
+    width: 120px;
+    height: 25px;
+  }
+
   .basket {
     width: 40px;
     height: 40px;
     border: 1px solid #767272;
     border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  img {
-    object-fit: contain;
-    width: 20px;
-    height: auto;
+    padding: 9px;
   }
 }
 
@@ -88,9 +94,47 @@ img {
   }
 }
 
+.filters {
+  width: 100%;
+  height: 60px;
+  margin: 32px 0;
+  padding: 10px;
+  display: flex;
+  border: 1px solid #dddada;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+
+  .search_icon {
+    width: 20px;
+    height: 20px;
+    margin: 10px 25px 10px 13px;
+  }
+  .search_field {
+    width: 80%;
+    border: 0 solid #fff;
+    margin-right: auto;
+  }
+  .filters_btn,
+  .settings_btn {
+    display: flex;
+    flex-shrink: 1;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 13px;
+    background: #0e49b5;
+  }
+
+  .settings_btn img {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7452%)
+      hue-rotate(351deg) brightness(102%) contrast(104%);
+  }
+}
+
 .items {
-  padding: 40px 0;
-  margin: 0 -25px;
+  margin: 0 -8px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -98,49 +142,85 @@ img {
 
 .card {
   position: relative;
-  margin: 25px 10px;
-  padding: 14px;
+  margin: 8px 8px 25px;
+
   width: 300px;
-  border: 1px solid #E0E0E0;
+  border: 1px solid #e0e0e0;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
 
   text-align: center;
 
-  .photo {
-    margin: 0 auto;
-    width: 200px;
-    height: 200px;
+  .card_content {
+    padding: 14px;
+    .photo {
+      margin: 0 auto;
+      width: 200px;
+      height: 200px;
 
-    img {
-      object-fit: contain;
+      img {
+        object-fit: contain;
+      }
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-top: 25px;
+    }
+
+    .stock_status img {
+      filter: brightness(0) saturate(100%) invert(78%) sepia(30%) saturate(7047%) hue-rotate(82deg) brightness(93%) contrast(88%);
+      border: 1px solid green;
+      border-radius: 50%;
+      height: 20px;
+      width: 20px;
+      padding: 1px;
+      margin: 0 6px 0 -12px;
+    }
+
+    .stock_status,
+    .price {
+      margin: 10px 0;
+      font-size: 14px;
+      font-weight: 400;
+      color: #767272;
+    }
+
+    .add_button {
+      display: inline-block;
+      padding: 14px 25px;
+      background-color: #0e49b5;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: 400;
+      color: #ffffff;
+      text-align: center;
     }
   }
 
-  .title {
-    font-size: 24px;
-    font-weight: 700;
-    margin-top: 25px;
-  }
-
-  .stock_status, .price {
-    margin: 10px 0;
+  .card_statistics {
+    width: 100%;
+    padding: 19px 14px 29px;
+    background: #dae2ea;
+    border-radius: 0 0 10px 10px;
+    display: flex;
     font-size: 14px;
     font-weight: 400;
-    color: #767272;
+    line-height: 22px;
+    color: #3b3e66;
 
+    .statistic_like {
+      width: 20px;
+      height: 20px;
+      filter: brightness(0) saturate(100%) invert(43%) sepia(35%)
+        saturate(1493%) hue-rotate(318deg) brightness(98%) contrast(94%);
+    }
+
+    .reviews {
+      width: 100%;
+      text-align: left;
+      padding: 0 12px;
+    }
   }
-
-  .add_button {
-    display: inline-block;
-    padding: 14px 25px;
-    background-color: #0E49B5;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: 400;
-    color: #ffffff;
-    text-align: center;
-  }
-
 }
-

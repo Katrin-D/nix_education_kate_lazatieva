@@ -12,25 +12,48 @@
   </head>
   <body>
     <div class="container">
-<!--      <header class="header">
-        <a href="" class="logo"><img src="./img/icons/logo.svg" alt="" /></a>
-        <a href="" class="basket"><img src="./img/icons/cart.svg" alt="" /></a>
-      </header>-->
+
+      <header class="header">
+        <a href="" class="logo"><img src="./img/icons/logo.svg" width="120" height="25" alt="logo" /></a>
+        <a href="" class="basket"><img src="./img/icons/cart.svg" alt="basket" /></a>
+      </header>
+
       <main>
         <div class="banner">
           <img src="./img/banners/ipad_air_banner.jpg" alt="" id="banner" />
         </div>
 
+        <div class="filters">
+            <img src="./img/icons/search.svg" class="search_icon" width="20" height="20" alt="search" />
+            <input type="text" class="search_field" placeholder="Enter device name...">
+            <a href="" class="filters_btn"><img src="./img/icons/filter.svg" width="120" height="25" alt="logo" /></a>
+            <a href="" class="settings_btn"><img src="./img/icons/settings.svg" width="120" height="25" alt="logo" /></a>
+
+        </div>
+
         <div class="items" id="items">
           <div class="card" id="card">
-            <div class="photo">
-              <img src="" alt="" id="photo" width="200" height="200" />
+            <div class="card_content">
+              <div class="photo">
+                <img src="" alt="" id="photo" width="200" height="200" />
+              </div>
+              <h3 class="title" id="title"></h3>
+              <p class="stock_status"><img src="./img/icons/check.svg" alt="" width="20" height="20" />
+                <b id="stock_status">31</b> left in stock</p>
+              <p class="price">Price: <b id="price">500</b> $</p>
+              <a href="" class="add_button">Add to cart</a>
             </div>
-            <h3 class="title" id="title"></h3>
-            <p class="stock_status"><span id="stock_status">31</span> left in stock</p>
-            <p class="price">Price: <span id="price">500</span> $</p>
-            <a href="" class="add_button">Add to cart</a>
-            <div class="status"></div>
+
+            <div class="card_statistics">
+                <img src="./img/icons/like_filled.svg" class="statistic_like" alt="Like" width="20" height="20" />
+              <div class="reviews">
+                <p><b id="reviews">1</b>% Positive reviews</p>
+                <p>Above average</p>
+              </div>
+              <p class="orders">
+                <b id="orders">1</b> orders
+              </p>
+            </div>
           </div>
         </div>
       </main>
