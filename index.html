@@ -12,10 +12,13 @@
   </head>
   <body>
     <div class="container">
-
       <header class="header">
-        <a href="" class="logo"><img src="./img/icons/logo.svg" width="120" height="25" alt="logo" /></a>
-        <a href="" class="basket"><img src="./img/icons/cart.svg" alt="basket" /></a>
+        <a href="" class="logo"
+          ><img src="./img/icons/logo.svg" width="120" height="25" alt="logo"
+        /></a>
+        <a href="" class="basket"
+          ><img src="./img/icons/cart.svg" alt="basket"
+        /></a>
       </header>
 
       <main>
@@ -23,36 +26,101 @@
           <img src="./img/banners/ipad_air_banner.jpg" alt="" id="banner" />
         </div>
 
-        <div class="filters">
-            <img src="./img/icons/search.svg" class="search_icon" width="20" height="20" alt="search" />
-            <input type="text" class="search_field" placeholder="Enter device name...">
-            <a href="" class="filters_btn"><img src="./img/icons/filter.svg" width="120" height="25" alt="logo" /></a>
-            <a href="" class="settings_btn"><img src="./img/icons/settings.svg" width="120" height="25" alt="logo" /></a>
-
+        <div class="search_panel">
+          <img
+            src="./img/icons/search.svg"
+            class="search_icon"
+            width="20"
+            height="20"
+            alt="search"
+          />
+          <input
+            type="text"
+            class="search_field"
+            placeholder="Enter device name..."
+          />
+          <a href="" class="filters_btn"
+            ><img
+              src="./img/icons/filter.svg"
+              width="120"
+              height="25"
+              alt="logo"
+          /></a>
+          <a href="" class="settings_btn"
+            ><img
+              src="./img/icons/settings.svg"
+              width="120"
+              height="25"
+              alt="logo"
+          /></a>
         </div>
 
-        <div class="items" id="items">
-          <div class="card" id="card">
-            <div class="card_content">
-              <div class="photo">
-                <img src="" alt="" id="photo" width="200" height="200" />
+        <div class="content">
+          <div class="filters">
+            <div class="filter">
+              <div class="filter_title">
+                <p>Price</p>
+                <img src="./img/icons/arrow_left.svg" class="arrow" alt="" />
               </div>
-              <h3 class="title" id="title"></h3>
-              <p class="stock_status"><img src="./img/icons/check.svg" alt="" width="20" height="20" />
-                <b id="stock_status">31</b> left in stock</p>
-              <p class="price">Price: <b id="price">500</b> $</p>
-              <a href="" class="add_button">Add to cart</a>
+              <div class="filter_content">
+                <div class="row">
+                  <label for="from">From </label>
+                  <input type="number" value="0" placeholder="0" id="from"/>
+                </div>
+                <div class="row">
+                  <label for="to">To </label>
+                  <input type="number" value="0" placeholder="0" id="to"/>
+                </div>
+              </div>
             </div>
-
-            <div class="card_statistics">
-                <img src="./img/icons/like_filled.svg" class="statistic_like" alt="Like" width="20" height="20" />
-              <div class="reviews">
-                <p><b id="reviews">1</b>% Positive reviews</p>
-                <p>Above average</p>
+            <div class="filter">
+              <div class="filter_title">
+                <p>Color</p>
+                <img src="./img/icons/arrow_left.svg" class="arrow" alt="" />
               </div>
-              <p class="orders">
-                <b id="orders">1</b> orders
-              </p>
+              <div class="filter_content">
+                <div class="checkbox">
+                  <input type="checkbox" id="red">
+                  <label for="red">Red</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="items" id="items">
+            <div class="card" id="card">
+              <div class="card_content">
+                <div class="photo">
+                  <img src="" alt="" id="photo" width="200" height="200" />
+                </div>
+                <h3 class="title" id="title"></h3>
+                <p class="stock_status">
+                  <img
+                    src="./img/icons/check.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                  />
+                  <b id="stock_status">31</b> left in stock
+                </p>
+                <p class="price">Price: <b id="price">500</b> $</p>
+                <a href="" class="add_button">Add to cart</a>
+              </div>
+
+              <div class="card_statistics">
+                <img
+                  src="./img/icons/like_filled.svg"
+                  class="statistic_like"
+                  alt="Like"
+                  width="20"
+                  height="20"
+                />
+                <div class="reviews">
+                  <p><b id="reviews">1</b>% Positive reviews</p>
+                  <p>Above average</p>
+                </div>
+                <p class="orders"><b id="orders">1</b> orders</p>
+              </div>
             </div>
           </div>
         </div>
