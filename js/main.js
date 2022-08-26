@@ -21,3 +21,16 @@ items.map((el) => {
   newCard.innerHTML = card.innerHTML;
   cards_container.append(newCard);
 });
+
+/*let result = fetch("https://api.tvmaze.com/search/shows?q=HBO", {
+  method: "GET",
+})
+  .then(async (response) => {
+    console.log(response.bodyUsed); // false
+    let result = await response.json();
+    console.log(response.bodyUsed); // true
+    return result;
+  })
+  .catch((err) => console.log(err));
+
+console.log(result);*/
