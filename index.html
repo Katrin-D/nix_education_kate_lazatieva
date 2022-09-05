@@ -39,20 +39,22 @@
             class="search_field"
             placeholder="Enter device name..."
           />
-          <a href="" class="filters_btn"
-            ><img
+          <div class="filters_btn">
+            <img
               src="./img/icons/filter.svg"
               width="120"
               height="25"
               alt="logo"
-          /></a>
-          <a href="" class="settings_btn"
-            ><img
+            />
+          </div>
+          <div class="settings_btn">
+            <img
               src="./img/icons/settings.svg"
               width="120"
               height="25"
               alt="logo"
-          /></a>
+            />
+          </div>
         </div>
 
         <div class="content">
@@ -60,28 +62,85 @@
             <div class="filter">
               <div class="filter_title">
                 <p>Price</p>
-                <img src="./img/icons/arrow_left.svg" class="arrow" alt="" />
+                <img
+                  src="./img/icons/arrow_left.svg"
+                  class="arrow_right"
+                  alt=""
+                />
               </div>
               <div class="filter_content">
                 <div class="row">
                   <label for="from">From </label>
-                  <input type="number" value="0" placeholder="0" id="from"/>
+                  <input type="number" value="0" placeholder="0" id="from" />
                 </div>
                 <div class="row">
                   <label for="to">To </label>
-                  <input type="number" value="0" placeholder="0" id="to"/>
+                  <input type="number" value="0" placeholder="0" id="to" />
                 </div>
               </div>
             </div>
             <div class="filter">
               <div class="filter_title">
                 <p>Color</p>
-                <img src="./img/icons/arrow_left.svg" class="arrow" alt="" />
+                <img
+                  src="./img/icons/arrow_left.svg"
+                  class="arrow_right"
+                  alt=""
+                />
               </div>
-              <div class="filter_content">
+              <div class="filter_content" id="color_filter"></div>
+            </div>
+            <div class="filter">
+              <div class="filter_title">
+                <p>OS</p>
+                <img
+                  src="./img/icons/arrow_left.svg"
+                  class="arrow_right"
+                  alt=""
+                />
+              </div>
+              <div class="filter_content" id="os_filter"></div>
+            </div>
+            <div class="filter">
+              <div class="filter_title">
+                <p>Memory</p>
+                <img
+                  src="./img/icons/arrow_left.svg"
+                  class="arrow_right"
+                  alt=""
+                />
+              </div>
+              <div class="filter_content" id="memory_filter"></div>
+            </div>
+            <div class="filter">
+              <div class="filter_title">
+                <p>Display</p>
+                <img
+                  src="./img/icons/arrow_left.svg"
+                  class="arrow_right"
+                  alt=""
+                />
+              </div>
+              <div class="filter_content" id="display_filter">
                 <div class="checkbox">
-                  <input type="checkbox" id="red">
-                  <label for="red">Red</label>
+                  <input type="checkbox" id="2-5" value="2-5" />
+                  <label for="2-5">2-5 inch</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="5-7" value="5-7" />
+                  <label for="5-7">5-7 inch</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="7-12" value="7-12" />
+                  <label for="7-12">7-12 inch</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="21-16" value="21-16" />
+                  <label for="21-16">21-16 inch</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" id="16+" value="16+" />
+                  <label for="16+">16+ inch</label>
                 </div>
               </div>
             </div>

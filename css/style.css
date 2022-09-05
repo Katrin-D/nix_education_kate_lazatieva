@@ -49,6 +49,10 @@ p {
   margin: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 input {
   outline: none;
 }
@@ -134,7 +138,7 @@ input :focus {
 .filters {
   position: relative;
   width: 320px;
-  height: 500px;
+  height: 100%;
   margin-right: 64px;
   border: 1px solid #e0e0e0;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
@@ -147,9 +151,12 @@ input :focus {
   padding: 10px 30px;
   border-bottom: 1px solid #dddddd;
 }
-.filters .filter .filter_title img {
+.filters .filter .filter_title .arrow_right {
   width: 20px;
   height: 20px;
+}
+.filters .filter .filter_title .arrow_bottom {
+  transform: rotate(90deg);
 }
 .filters .filter .filter_content {
   padding: 23px 30px;
