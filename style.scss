@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
+$line-height: 60px;
+$task-color: #D7DBEF;
+$accent-color: darken($task-color, 15%);
+
 html,
 body {
   margin: 0;
@@ -59,7 +63,7 @@ a{
   .time {
     position: relative;
     width: 30px;
-    height: 40px;
+    height: $line-height;
     text-align: right;
     padding-right: 8px;
     &:last-child {
@@ -80,15 +84,15 @@ a{
 
     .t-line {
       width: 100%;
-      height: 40px;
-      border-top: 1px solid #BCC3E5;
+      height: $line-height;
+      border-top: 1px solid $task-color;
 
       &:last-child {
-        border-bottom: 1px solid #BCC3E5;
+        border-bottom: 1px solid $task-color;
       }
     }
 
-    .tasks {
+    .tasks-container {
       position: absolute;
       top: 0;
       left: 0;
@@ -98,12 +102,13 @@ a{
       .task {
         display: flex;
         align-items: center;
-        height: 36px;
+        height: $line-height - 4;
         margin-right: 20px;
+        margin-bottom: 4px;
         padding: 0 10px;
         border-radius: 0 0 4px 4px;
-        background-color: #D7DBEF;
-        border-left: 3px solid #a5a9c5;
+        background-color: $task-color;
+        border-left: 3px solid $accent-color;
 
 
       }
