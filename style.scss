@@ -1,8 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-
-$line-height: 60px;
-$task-color: #D7DBEF;
-$accent-color: darken($task-color, 15%);
+@import "variables.scss";
 
 html,
 body {
@@ -100,9 +96,11 @@ a{
       height: 100%;
 
       .task {
+        position: absolute;
         display: flex;
         align-items: center;
-        height: $line-height - 4;
+        /*height: $line-height - 4;*/
+        min-height: 15px;
         margin-right: 20px;
         margin-bottom: 4px;
         padding: 0 10px;

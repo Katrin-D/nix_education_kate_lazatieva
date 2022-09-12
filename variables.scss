@@ -1,0 +1,8 @@
+$line-height: 60px;
+$task-color: #D7DBEF;
+$accent-color: darken($task-color, 15%);
+
+:export {
+  lineHeight: $line-height;
+  taskColor: $task-color;
+}
