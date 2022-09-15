@@ -1,6 +1,6 @@
-import { tasksData } from "./data.js"
-import "./style.scss"
-import variables from "./variables.scss";
+import { tasksData } from "../data/data.js"
+import "../style/style.scss"
+import variables from "../style/variables.scss";
 
 setDate();
 function setDate() {
