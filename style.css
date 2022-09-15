@@ -1,0 +1,143 @@
+:export {
+  lineHeight: 60px;
+  taskColor: #D7DBEF;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: normal;
+  font-size: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 400;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.main {
+  position: relative;
+}
+
+.calendar-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  margin: 40px auto;
+  padding: 40px;
+}
+.calendar-container .date {
+  margin: 0;
+}
+.calendar-container .calendar {
+  display: flex;
+  margin: 30px 0 0;
+  overflow-x: clip;
+}
+.calendar-container .time {
+  position: relative;
+  width: 30px;
+  height: 60px;
+  text-align: right;
+  padding-right: 8px;
+}
+.calendar-container .time:last-child {
+  height: auto;
+}
+.calendar-container .time span {
+  position: relative;
+  top: -12px;
+  font-size: 10px;
+  line-height: 10px;
+}
+.calendar-container .task-space {
+  position: relative;
+  width: 100%;
+}
+.calendar-container .task-space .t-line {
+  width: 100%;
+  height: 60px;
+  border-top: 1px solid #D7DBEF;
+}
+.calendar-container .task-space .t-line:last-child {
+  border-bottom: 1px solid #D7DBEF;
+}
+.calendar-container .task-space .tasks-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.calendar-container .task-space .tasks-container .task {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /*height: $line-height - 4;*/
+  min-height: 15px;
+  margin-right: 20px;
+  margin-bottom: 4px;
+  padding: 0 10px;
+  border-radius: 0 0 4px 4px;
+  background-color: #D7DBEF;
+  border-left: 3px solid #a0aad9;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-container .modal {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
