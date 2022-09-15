@@ -50,7 +50,30 @@
     </div>
 </div>
 <div class="modal-container hidden">
-    <div class="modal"></div>
+    <div class="modal">
+        <form>
+            <div class="form__title">
+                <input type="text" id="event-title" placeholder="Добавьте событие">
+            </div>
+            <div class="form__time">
+                <div class="form__time-start">
+                    <label for="time-start">time-start</label>
+                    <input type="text" id="time-start">
+                </div>
+                <div class="form__time-end">
+                    <label for="time-end">time-end</label>
+                    <input type="text" id="time-end">
+                </div>
+            </div>
+            <div class="form__color">
+                <label for="event-color">Изменить цвет:</label>
+                <input type="color" id="event-color" name="event-color" value="#E2ECF5">
+            </div>
+            <div class="form__btn">
+                <button id="event-create" type="submit">Create</button>
+            </div>
+        </form>
+    </div>
 </div>
 </div>
 

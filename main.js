@@ -11,6 +11,19 @@ function setDate() {
     dateNow.textContent = "Today: " + d.toLocaleDateString() + ", " + weekday[d.getUTCDay()];
 }
 
+const createTask = (el) => {
+    let heightOfTask = parseInt(variables.lineHeight) / 60 * el.duration;
+    let task = document.createElement("div");
+
+    task.classList = "task";
+    task.style.height = `${heightOfTask}px`;
+    task.style.top = `${el.start}px`;
+    task.style.left = `${el.left}px`;
+    task.innerHTML = `<p>${el.title}</p>`;
+    tasksContainer.appendChild(task);
+}
+
+
 const tasksContainer = document.querySelector(".tasks-container")
 const taskWithStyles = tasksData.reduce((previousValue, currentValue) => {
     const newTask = {
@@ -35,24 +48,22 @@ console.log(taskWithStyles)
 
 
 taskWithStyles.map((el) => {
-    let heightOfTask = parseInt(variables.lineHeight) / 60 * el.duration;
-    let task = document.createElement("div");
-
-    task.classList = "task";
-    task.style.height = `${heightOfTask}px`;
-    task.style.top = `${el.start}px`;
-    task.style.left = `${el.left}px`;
-    task.innerHTML = `<p>${el.title}</p>`;
-    tasksContainer.appendChild(task);
+    createTask(el);
 })
+
 
 const tasksSpace = document.querySelector(".task-space")
 const modal = document.querySelector(".modal-container")
-tasksSpace.addEventListener("click", (e) => modal.classList.toggle("hidden"))
+tasksSpace.addEventListener("click", (e) => {
+
+    modal.classList.toggle("hidden")
+})
 modal.addEventListener("click", (e) => {
     if(e.target === modal)
     modal.classList.toggle("hidden");
 })
+
+
 
 
 
