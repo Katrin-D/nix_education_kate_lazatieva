@@ -45,3 +45,14 @@ taskWithStyles.map((el) => {
     task.innerHTML = `<p>${el.title}</p>`;
     tasksContainer.appendChild(task);
 })
+
+const tasksSpace = document.querySelector(".task-space")
+const modal = document.querySelector(".modal-container")
+tasksSpace.addEventListener("click", (e) => modal.classList.toggle("hidden"))
+modal.addEventListener("click", (e) => {
+    if(e.target === modal)
+    modal.classList.toggle("hidden");
+})
+
+
+

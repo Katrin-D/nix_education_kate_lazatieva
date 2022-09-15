@@ -35,6 +35,14 @@ a{
   outline: none;
 }
 
+.hidden {
+  display: none !important;
+}
+
+.main {
+  position: relative;
+}
+
 .calendar-container {
   position: relative;
   width: 100%;
@@ -114,4 +122,33 @@ a{
       }
     }
   }
+
+
 }
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .modal {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 20px;
+
+  }
+}
+
