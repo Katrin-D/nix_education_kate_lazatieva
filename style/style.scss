@@ -19,17 +19,22 @@ body {
   box-sizing: border-box;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   font-weight: 400;
 }
 
-p{
+p {
   margin: 0;
   padding: 0;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
   outline: none;
@@ -62,7 +67,7 @@ a{
   .calendar {
     display: flex;
     margin: 30px 0 0;
-    overflow-x: clip;
+    overflow-x: hidden;
   }
 
   .time {
@@ -117,13 +122,9 @@ a{
         border-radius: 0 0 4px 4px;
         background-color: $task-color;
         border-left: 3px solid $accent-color;
-
-
       }
     }
   }
-
-
 }
 
 .modal-container {
@@ -148,7 +149,5 @@ a{
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     padding: 20px;
-
   }
 }
-

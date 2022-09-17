@@ -15,7 +15,7 @@ const createTask = (el) => {
     let heightOfTask = parseInt(variables.lineHeight) / 60 * el.duration;
     let task = document.createElement("div");
 
-    task.classList = "task";
+    task.classList.add("task");
     task.style.height = `${heightOfTask}px`;
     task.style.top = `${el.start}px`;
     task.style.left = `${el.left}px`;
@@ -54,14 +54,20 @@ taskWithStyles.map((el) => {
 
 const tasksSpace = document.querySelector(".task-space")
 const modal = document.querySelector(".modal-container")
-tasksSpace.addEventListener("click", (e) => {
+tasksSpace.addEventListener("click", ($event) => {
 
-    modal.classList.toggle("hidden")
+    /*let newTask = {
+        start: 0,
+        duration: 15,
+        title: "New Task"};*/
+
+    /*modal.classList.toggle("hidden")*/
+    console.log($event)
 })
-modal.addEventListener("click", (e) => {
+/*modal.addEventListener("click", (e) => {
     if(e.target === modal)
     modal.classList.toggle("hidden");
-})
+})*/
 
 
 
