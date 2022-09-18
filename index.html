@@ -54,34 +54,55 @@
       <div class="modal-container hidden">
         <div class="modal">
           <form>
-            <div class="form__title">
+            <div class="newTask-title">
               <input
                 type="text"
-                id="event-title"
-                placeholder="Добавьте событие"
+                id="newTask-title"
+                placeholder="Add some text"
               />
             </div>
-            <div class="form__time">
-              <div class="form__time-start">
+            <div class="newTask-time">
+              <div class="time-start">
                 <label for="time-start">time-start</label>
-                <input type="text" id="time-start" />
+                <!--<input type="text" id="time-start" value="222"/>-->
+                <select name="time-start" id="time-start">
+                  <option value="8">8:00</option>
+                  <option value="9">9:00</option>
+                  <option value="10">10:00</option>
+                  <option value="11">11:00</option>
+                  <option value="12">12:00</option>
+                  <option value="13">13:00</option>
+                  <option value="14">14:00</option>
+                  <option value="15">15:00</option>
+                  <option value="16">16:00</option>
+                </select>
               </div>
-              <div class="form__time-end">
+              <div class="time-end">
                 <label for="time-end">time-end</label>
-                <input type="text" id="time-end" />
+                <select name="time-end" id="time-end">
+                  <option value="9">9:00</option>
+                  <option value="10">10:00</option>
+                  <option value="11">11:00</option>
+                  <option value="12">12:00</option>
+                  <option value="13">13:00</option>
+                  <option value="14">14:00</option>
+                  <option value="15">15:00</option>
+                  <option value="16">16:00</option>
+                  <option value="17">17:00</option>
+                </select>
               </div>
             </div>
-            <div class="form__color">
-              <label for="event-color">Изменить цвет:</label>
+            <div class="newTask-color">
+              <label for="newTask-color">Изменить цвет:</label>
               <input
                 type="color"
-                id="event-color"
-                name="event-color"
-                value="#E2ECF5"
+                id="newTask-color"
+                name="newTask-color"
+                value="#D7DBEF"
               />
             </div>
-            <div class="form__btn">
-              <button id="event-create" type="submit">Create</button>
+            <div class="create">
+              <button id="create-btn" type="submit">Create</button>
             </div>
           </form>
         </div>
