@@ -2,6 +2,8 @@ import { tasksData } from "../data/data.js";
 /*import "../style/style.scss";*/
 /*import variables from "../style/variables.scss";*/
 
+const DEFAULT_ID = "default";
+
 setDate();
 function setDate() {
   const weekday = [
@@ -39,12 +41,14 @@ const newTaskColor = document.getElementById("newTask-color"),
   timeEnd = document.getElementById("time-end");
 
 createBtn.addEventListener("click", (event) => {
-  itemsInStorage.push({
+  const dataFromModal = {
     start: +timeStart.value,
     duration: timeEnd.value - timeStart.value,
     title: newTaskTitle.value,
-  });
-  setEventData(itemsInStorage);
+  };
+  document.getElementById(DEFAULT_ID).remove();
+
+  setEventData(itemsInStorage.concat(dataFromModal));
 });
 
 function updateStorage(data) {
@@ -54,7 +58,7 @@ function updateStorage(data) {
 
 const tasksContainer = document.querySelector(".tasks-container");
 const tasks = () => {
-  return tasksData
+  return itemsInStorage
     .sort((el1, el2) => el1.start - el2.start)
     .reduce((previousValue, currentValue) => {
       const newTask = {
@@ -92,6 +96,10 @@ const createTask = (el) => {
   task.style.left = `${el.left}px`;
   task.innerHTML = `<p>${el.title}</p>`;
 
+  if (el.id) {
+    task.setAttribute("id", DEFAULT_ID);
+  }
+
   tasksContainer.appendChild(task);
 };
 
@@ -119,6 +127,7 @@ const setNewTask = (event) => {
   let start = Math.round(clickedPosition / 15) * 15; //15 это 1/4 от высоты строки
 
   let newTask = {
+    id: DEFAULT_ID,
     start: start,
     duration: 15,
     title: "New Task",
@@ -128,7 +137,7 @@ const setNewTask = (event) => {
   timeEnd.value = start + newTask.duration;
 
   if (start <= 525) {
-    itemsInStorage.push(newTask);
+    /*itemsInStorage.push(newTask);*/
     /*tasksData.push(newTask);*/
     createTask(newTask); //не учитывает все предыдущие таски
   } else {
