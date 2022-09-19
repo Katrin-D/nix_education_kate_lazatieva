@@ -21,8 +21,7 @@ function setDate() {
 }
 
 const tasksContainer = document.querySelector(".tasks-container");
-
-const tasksWithStyles = () => {
+const tasks = () => {
   return tasksData
     .sort((el1, el2) => el1.start - el2.start)
     .reduce((previousValue, currentValue) => {
@@ -64,41 +63,80 @@ const createTask = (el) => {
   tasksContainer.appendChild(task);
 };
 
-tasksWithStyles().map((el) => {
+tasks().map((el) => {
   createTask(el);
 });
 
-console.log(tasksWithStyles());
+/*const getTaskDetails = () => {
+  const title = document.getElementById("newTask-title").value;
+  const start = +document.getElementById("time-start").value;
+  const end = +document.getElementById("time-end").value;
+  const duration = end - start;
+  return {
+    title,
+    start,
+    duration,
+  };
+};*/
 
-const modal = document.querySelector(".modal-container");
-tasksContainer.addEventListener("click", (event) => {
-  event.stopPropagation();
-  let containerTopPosition = tasksContainer.getBoundingClientRect().top;
-  let start = event.pageY - containerTopPosition;
+function getEventData() {
+  return JSON.parse(localStorage.getItem('event'));
+}
+
+function setEventData(event) {
+  localStorage.setItem('event', JSON.stringify(event));
+  return false;
+}
+
+let setData = getEventData() ? getEventData() : updateStorage(tasksData);
+const createBtn = document.getElementById("create-btn");
+const newTaskColor = document.getElementById('newTask-color'),
+    newTaskTitle = document.getElementById('newTask-title'),
+    timeStart = document.getElementById('time-start'),
+    timeEnd = document.getElementById('time-end');
+
+createBtn.addEventListener('click', (event) => {
+  let newEvent = setData;
+
+  newEvent.push({start: timeStart.value, duration: (timeEnd.value - timeStart.value), title: newTaskTitle.value});
+  setEventData(newEvent);
+})
+
+function updateStorage(data) {
+  setEventData(data);
+  return data;
+}
+
+
+const setNewTask = (event) => {
   const timeStart = document.getElementById("time-start");
   const timeEnd = document.getElementById("time-end");
+  let containerTopPosition = tasksContainer.getBoundingClientRect().top;
+  let clickedPosition = event.pageY - containerTopPosition;
+  let start = Math.round(clickedPosition / 15) * 15; //15 это 1/4 от высоты строки
 
-  console.log(start)
   let newTask = {
     start: start,
     duration: 15,
     title: "New Task",
   };
 
+  timeStart.value = start;
+  timeEnd.value = start + newTask.duration;
 
-  timeStart.value = Math.floor((start)/ 60)+8;
-  timeEnd.value = Math.floor((start)/ 60)+8;
+  if (start <= 525) {
+    tasksData.push(newTask);
+    createTask(newTask); //не учитывает все предыдущие таски
+  } else {
+    return null;
+  }
+};
 
-
-  tasksData.push(newTask);
+const modal = document.querySelector(".modal-container");
+tasksContainer.addEventListener("click", (event) => {
+  event.stopPropagation();
+  setNewTask(event);
   modal.classList.toggle("hidden");
-  console.log(tasksWithStyles());
-
-  /*  tasksWithStyles().map((el) => {
-    createTask(el);
-  });*/ //все отрисовіваются еще раз, поверх старых
-
-  createTask(newTask); //не учитывает все предыдущие таски
 });
 
 modal.addEventListener("click", (e) => {
@@ -109,3 +147,5 @@ const colorPicker = document.getElementById("newTask-color");
 colorPicker.addEventListener("change", (event) => {
   /*variables.taskColor = event.target.value*/
 });
+
+console.log(tasks());

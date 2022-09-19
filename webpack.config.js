@@ -12,7 +12,7 @@ module.exports = {
         filename: "bundle.js",
     },
     module: {
-        /*rules: [
+        rules: [
             // SCSS ALL EXCEPT MODULES
             {
                 test: /\.scss$/i,
@@ -57,6 +57,6 @@ module.exports = {
                     },
                 ],
             },
-        ],*/
+        ],
     },
 };
