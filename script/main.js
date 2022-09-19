@@ -29,14 +29,16 @@ function setEventData(event) {
   return false;
 }
 
+let itemsInStorage = getEventData() ? getEventData() : updateStorage(tasksData);
+console.log(itemsInStorage)
+
 const createBtn = document.getElementById("create-btn");
 const newTaskColor = document.getElementById('newTask-color'),
     newTaskTitle = document.getElementById('newTask-title'),
     timeStart = document.getElementById('time-start'),
     timeEnd = document.getElementById('time-end');
-let itemsInStorage = getEventData() ? getEventData() : updateStorage(tasksData);
-createBtn.addEventListener('click', (event) => {
 
+createBtn.addEventListener('click', (event) => {
   itemsInStorage.push({start: timeStart.value, duration: (timeEnd.value - timeStart.value), title: newTaskTitle.value});
   setEventData(itemsInStorage);
 })
