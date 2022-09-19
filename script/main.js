@@ -21,27 +21,31 @@ function setDate() {
 }
 
 function getEventData() {
-  return JSON.parse(localStorage.getItem('event'));
+  return JSON.parse(localStorage.getItem("event"));
 }
 
 function setEventData(event) {
-  localStorage.setItem('event', JSON.stringify(event));
+  localStorage.setItem("event", JSON.stringify(event));
   return false;
 }
 
 let itemsInStorage = getEventData() ? getEventData() : updateStorage(tasksData);
-console.log(itemsInStorage)
+console.log(itemsInStorage);
 
 const createBtn = document.getElementById("create-btn");
-const newTaskColor = document.getElementById('newTask-color'),
-    newTaskTitle = document.getElementById('newTask-title'),
-    timeStart = document.getElementById('time-start'),
-    timeEnd = document.getElementById('time-end');
+const newTaskColor = document.getElementById("newTask-color"),
+  newTaskTitle = document.getElementById("newTask-title"),
+  timeStart = document.getElementById("time-start"),
+  timeEnd = document.getElementById("time-end");
 
-createBtn.addEventListener('click', (event) => {
-  itemsInStorage.push({start: timeStart.value, duration: (timeEnd.value - timeStart.value), title: newTaskTitle.value});
+createBtn.addEventListener("click", (event) => {
+  itemsInStorage.push({
+    start: +timeStart.value,
+    duration: timeEnd.value - timeStart.value,
+    title: newTaskTitle.value,
+  });
   setEventData(itemsInStorage);
-})
+});
 
 function updateStorage(data) {
   setEventData(data);
@@ -124,7 +128,8 @@ const setNewTask = (event) => {
   timeEnd.value = start + newTask.duration;
 
   if (start <= 525) {
-    tasksData.push(newTask);
+    itemsInStorage.push(newTask);
+    /*tasksData.push(newTask);*/
     createTask(newTask); //не учитывает все предыдущие таски
   } else {
     return null;
