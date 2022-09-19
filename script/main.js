@@ -20,6 +20,32 @@ function setDate() {
     "Today: " + d.toLocaleDateString() + ", " + weekday[d.getUTCDay()];
 }
 
+function getEventData() {
+  return JSON.parse(localStorage.getItem('event'));
+}
+
+function setEventData(event) {
+  localStorage.setItem('event', JSON.stringify(event));
+  return false;
+}
+
+const createBtn = document.getElementById("create-btn");
+const newTaskColor = document.getElementById('newTask-color'),
+    newTaskTitle = document.getElementById('newTask-title'),
+    timeStart = document.getElementById('time-start'),
+    timeEnd = document.getElementById('time-end');
+let itemsInStorage = getEventData() ? getEventData() : updateStorage(tasksData);
+createBtn.addEventListener('click', (event) => {
+
+  itemsInStorage.push({start: timeStart.value, duration: (timeEnd.value - timeStart.value), title: newTaskTitle.value});
+  setEventData(itemsInStorage);
+})
+
+function updateStorage(data) {
+  setEventData(data);
+  return data;
+}
+
 const tasksContainer = document.querySelector(".tasks-container");
 const tasks = () => {
   return tasksData
@@ -78,35 +104,6 @@ tasks().map((el) => {
     duration,
   };
 };*/
-
-function getEventData() {
-  return JSON.parse(localStorage.getItem('event'));
-}
-
-function setEventData(event) {
-  localStorage.setItem('event', JSON.stringify(event));
-  return false;
-}
-
-let setData = getEventData() ? getEventData() : updateStorage(tasksData);
-const createBtn = document.getElementById("create-btn");
-const newTaskColor = document.getElementById('newTask-color'),
-    newTaskTitle = document.getElementById('newTask-title'),
-    timeStart = document.getElementById('time-start'),
-    timeEnd = document.getElementById('time-end');
-
-createBtn.addEventListener('click', (event) => {
-  let newEvent = setData;
-
-  newEvent.push({start: timeStart.value, duration: (timeEnd.value - timeStart.value), title: newTaskTitle.value});
-  setEventData(newEvent);
-})
-
-function updateStorage(data) {
-  setEventData(data);
-  return data;
-}
-
 
 const setNewTask = (event) => {
   const timeStart = document.getElementById("time-start");
