@@ -1,62 +1,26 @@
 const path = require("path");
+const miniCss = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: "development",
-    /*  entry: {
-        main: './script/main.js',
-        /!*main: path.resolve(__dirname, "./script/main.js"),*!/
-      },*/
-    entry: './script/main.js',
+    entry: './src/js/main.js',
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "bundle.js",
     },
     module: {
-        rules: [
-            // SCSS ALL EXCEPT MODULES
-            {
-                test: /\.scss$/i,
-                exclude: /\.module\.scss$/i,
-                use: [
-                    {
-                        loader: "style-loader",
-                    },
-                    {
-                        loader: "css-loader",
-                        options: {
-                            importLoaders: 1,
-                            modules: {
-                                mode: "icss",
-                            },
-                        },
-                    },
-                    {
-                        loader: "sass-loader",
-                    },
-                ],
-            },
-            // --------
-            // SCSS MODULES
-            {
-                test: /\.module\.scss$/i,
-                use: [
-                    {
-                        loader: "style-loader",
-                    },
-                    {
-                        loader: "css-loader",
-                        options: {
-                            importLoaders: 1,
-                            modules: {
-                                mode: "local",
-                            },
-                        },
-                    },
-                    {
-                        loader: "sass-loader",
-                    },
-                ],
-            },
-        ],
+        rules: [{
+            test: /\.(s*)css$/,
+            use: [
+                miniCss.loader,
+                'css-loader',
+                'sass-loader',
+            ]
+        }]
     },
+    plugins: [
+        new miniCss({
+            filename: 'style.css',
+        }),
+    ],
 };
