@@ -6,8 +6,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack",
-    "startIndex": "node ./src/index.js",
-    "startCalc": "node ./src/calculations.js",
+    "start": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
